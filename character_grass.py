@@ -39,10 +39,14 @@ def run_rectangle():
     for x in range(400, 750 + 1, 10):
         render_frame(x, 90) # 해당 좌표에 캐릭터 그리기
 
+    # up
+    for y in range(90, 550 + 1, 10):
+        render_frame(750, y)
+
 
     
 while True:
-    run_circle()
+    # run_circle()
     run_rectangle()
     break
 
