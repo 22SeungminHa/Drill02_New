@@ -17,7 +17,7 @@ def render_frame(x, y): # 해당 좌표에 캐릭터 그리기
     clear_canvas_now()
     grass.draw_now(400, 30)
     character.draw_now(x, y)
-    delay(0.1)
+    delay(0.01)
 
 
 
@@ -50,6 +50,10 @@ def run_rectangle():
     # down
     for y in range(550, 90 - 1, -10):
         render_frame(50, y)
+
+    # right
+    for x in range(50, 400 + 1, 10):
+        render_frame(x, 90)
 
 
     
