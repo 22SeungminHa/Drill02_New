@@ -9,11 +9,11 @@ grass = load_image('grass.png')
 clear_canvas_now()
 grass.draw_now(400, 30)
 character.draw_now(400, 90)
-delay(1)
+delay(0.1)
 
 
 
-def render_frame(x, y):
+def render_frame(x, y): # 해당 좌표에 캐릭터 그리기
     clear_canvas_now()
     grass.draw_now(400, 30)
     character.draw_now(x, y)
@@ -37,11 +37,15 @@ def run_rectangle():
 
     # right
     for x in range(400, 750 + 1, 10):
-        render_frame(x, 90) # 해당 좌표에 캐릭터 그리기
+        render_frame(x, 90)
 
     # up
     for y in range(90, 550 + 1, 10):
         render_frame(750, y)
+
+    # left
+    for x in range(750, 50 - 1, -10):
+        render_frame(x, 550)
 
 
     
