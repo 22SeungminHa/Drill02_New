@@ -25,7 +25,7 @@ def run_circle():
     print('CIRCLE')
     cx, cy, r = 400, 300, 210
     
-    for deg in range(-90, 270, 5):
+    for deg in range(90, 450, 5):
         x = cx + r * math.cos(math.radians(deg))
         y = cy + r * math.sin(math.radians(deg))
         render_frame(x, y)
