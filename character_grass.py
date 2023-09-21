@@ -13,18 +13,22 @@ delay(1)
 
 
 
+def render_frame(x, y):
+    clear_canvas_now()
+    grass.draw_now(400, 30)
+    character.draw_now(x, y)
+    delay(0.1)
+
+
+
 def run_circle():
     print('CIRCLE')
-
     cx, cy, r = 400, 300, 210
     
     for deg in range(-90, 270, 5):
         x = cx + r * math.cos(math.radians(deg))
         y = cy + r * math.sin(math.radians(deg))
-        clear_canvas_now()
-        grass.draw_now(400, 30)
-        character.draw_now(x, y)
-        delay(0.1)
+        render_frame(x, y)
         
 
 
@@ -32,16 +36,13 @@ def run_rectangle():
     print('RECTANGLE')
 
     # right
-    for x in range(400, 750 + 1, 5):
-        clear_canvas_now()
-        grass.draw_now(400, 30)
-        character.draw_now(x, 90)
-        delay(0.1)
+    for x in range(400, 750 + 1, 10):
+        render_frame(x, 90) # 해당 좌표에 캐릭터 그리기
 
 
     
 while True:
-    # run_circle()
+    run_circle()
     run_rectangle()
     break
 
